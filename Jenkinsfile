@@ -12,7 +12,7 @@ pipeline {
         }
         stage('test1') {
             steps {
-                echo 'Hello world!' 
+                sh 'docker -version' 
             }
         }
         stage('deploy1') {
