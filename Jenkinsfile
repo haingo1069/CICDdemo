@@ -4,6 +4,7 @@ pipeline {
         stage('build1') {
             steps {
                 echo 'Hello world!' 
+                ls -al
             }
         }
         stage('test1') {
