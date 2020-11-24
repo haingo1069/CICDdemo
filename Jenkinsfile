@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'echo "Start building docker container"'
                 sh '''
-                    docker build -t mytest:0.1.0 -f Dockerfile .
+                    docker build -t rndevapp/mytest:0.1.0 -f Dockerfile .
                     docker image ls
                 '''
             }
@@ -17,7 +17,10 @@ pipeline {
         }
         stage('push to docker hub') {
             steps {
-                sh 'docker push rndevapp/mytest:0.1.0' 
+                sh '''
+                docker login -u rndevapp -p hai0858
+                docker push rndevapp/mytest:0.1.0
+                '''
             }
         }
     }
