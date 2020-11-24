@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'echo "Start building docker container"'
                 sh '''
-                    docker build -f Dockerfile .
+                    docker build -t app:0.1 -f Dockerfile .
                     docker image ls
                 '''
             }
