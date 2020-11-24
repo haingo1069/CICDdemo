@@ -15,9 +15,9 @@ pipeline {
                 sh 'echo start testing' 
             }
         }
-        stage('deploy') {
+        stage('push to docker hub') {
             steps {
-                echo 'Hello world!' 
+                sh 'docker push rndevapp/mytest:0.1.0' 
             }
         }
     }
