@@ -18,7 +18,7 @@ pipeline {
         stage('push to docker hub') {
             steps {
                 sh '''
-                docker login -u rndevapp -p hai0858
+                docker login -u rndevapp -p haingo0858
                 docker push rndevapp/mytest:0.1.0
                 '''
             }
