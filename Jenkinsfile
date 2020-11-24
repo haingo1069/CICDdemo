@@ -1,21 +1,21 @@
 pipeline {
     agent any 
     stages {
-        stage('build1') {
+        stage('build') {
             steps {
-                sh 'echo "Hello World"'
+                sh 'echo "Start building docker container"'
                 sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
+                    docker build -f Dockerfile .
+                    docker image ls
                 '''
             }
         }
-        stage('test1') {
+        stage('test') {
             steps {
-                sh 'docker -v' 
+                sh 'echo start testing' 
             }
         }
-        stage('deploy1') {
+        stage('deploy') {
             steps {
                 echo 'Hello world!' 
             }
