@@ -26,7 +26,7 @@ pipeline {
         stage('pull image and run') {
             steps {
                 sh '''
-                docker run -p 3000:3000 rndevapp/mytest:0.1.0
+                docker run -d -p 9090:3000 rndevapp/mytest:0.1.0
                 '''
             }
         }
